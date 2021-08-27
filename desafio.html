@@ -83,29 +83,23 @@ function drawCurveTypes() {
        google.charts.setOnLoadCallback(drawChart);
        function drawChart() {
          var data = google.visualization.arrayToDataTable([
-         ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
-          ['Número de Ações por Setor',    null,                 0,                               0],
-          ['Materiais',   'Número de Ações por Setor',             0,                               0],
-          ['Utilities',    'Número de Ações por Setor',             0,                               0],
-          ['Bens de Capital',   'Número de Ações por Setor',             0,                               0],
-          ['Alimentos, Bebidas e Fumo',   'Número de Ações por Setor',             0,                               0],
-          ['Serviço do Consumidor',   'Número de Ações por Setor',             0,                               0],
-          ['Mercado Imobiliário',   'Número de Ações por Setor',             0,                               0],
-          ['Seguros',   'Número de Ações por Setor',             0,                               0],
-          ['Transporte',   'Número de Ações por Setor',             0,                               0],
-          ['Varejo não Discricionário',   'Número de Ações por Setor',             0,                               0],
-          ['8',    'Materiais',            11,                              10],
-          ['3',    'Utilities',             42,                              -11],
-          ['2',   'Bens de Capital',             31,                              -2],
-          ['2',    'Alimentos, Bebidas e Fumo',             22,                              -13],
-          ['1',     'Serviço do Consumido',             17,                              4],
-          ['1',        'Mercado Imobiliário',             21,                              -5],
-          ['3',     'Seguros',               36,                              4],
-          ['1',     'Transporte',               20,                              -12],
-          ['2',     'Varejo não Discricionário',               40,                              63],
-          ['1',      'Número de Ações por Setor',               4,                               34],
-         
-        ]);
+          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Nº de Ações por Setor',    null,                 0,                               0],
+          ['Bens de Consumo',     'Nº de Ações por Setor',               16,                              4],
+          ['Finanças',     'Nº de Ações por Setor',               10,                              -12],
+          ['Mercado Imobiliário',     'Nº de Ações por Setor',               20,                              63],
+          ['Outros',      'Nº de Ações por Setor',               4,                               34],
+          ['Seguros',    'Nº de Ações por Setor',               12,                              24],
+          ['Alimentos, bebidas e fumo',      'Nº de Ações por Setor',               18,                              13],
+          ['Serviço do Consumidor',  'Nº de Ações por Setor',               11,                              -52],
+          ['Utilitiles',     'Nº de Ações por Setor',             25,                              0],
+          ['Materiais', 'Nº de Ações por Setor',             40,                              43],
+          ['Varejo não discricionário',     'Nº de Ações por Setor',             12,                              2],
+          ['Transporte',     'Nº de Ações por Setor',             10,                              12],
+          ['Serviço e Software',     'Nº de Ações por Setor',             8,                               10]
+        
+         ]);
+ 
          tree = new google.visualization.TreeMap(document.getElementById('setor_div'));
  
          tree.draw(data, {
@@ -154,7 +148,7 @@ function drawCurveTypes() {
         <section class="challenge">
             
             <div class="container">
-                <class="row">
+                <div class="row">
                 
                         <h1>NCH Maracanã FIA</h1>
                         <div id="chart_div" style="width: 1000px; height: 500px;"> </div>    
@@ -162,6 +156,7 @@ function drawCurveTypes() {
             <div class="col">
                 <div id="risco_retorno_div" style="width: 450px; height: 250px;"></div>
                     </div>
+
                     <div class="col">
                         <div id="setor_div" style="width: 450px; height: 250px;"></div>
                             </div>
