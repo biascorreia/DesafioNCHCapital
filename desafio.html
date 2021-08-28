@@ -113,6 +113,38 @@ function drawCurveTypes() {
      </script>
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
      <script type="text/javascript">
+       google.charts.load('current', {'packages':['corechart']});
+       google.charts.setOnLoadCallback(drawChart);
+ 
+       function drawChart() {
+         var data = google.visualization.arrayToDataTable([
+           ['Year', 'DrawDown FIA', 'DrawDown Ibovespa'],
+           [0, 0, 0],    [1, -10, -5],   [2, -23, -15],  [3, -17, -9],   [4, -18, -10],  [5, -9, -5],
+        [6, -11, -3],   [7, -27, -19],  [8, -33, -25],  [9, -40, -40],  [10, -32, -24], [11, -35, -27],
+        [12, -30, -22], [13, -40, -32], [14, -42, -34], [15, -47, -39], [16, -44, -36], [17, -48, -40],
+        [18, -20, -44], [19, -54, -46], [20, -42, -10], [21, -55, -47], [22, -36, -15], [23, -57, -49],
+        [24, -60, -19], [25, -50, -42], [26, -52, -44], [27, -51, -43], [28, -49, -41], [29, -53, -45],
+        [30, -55, -47], [31, -40, -52], [32, -61, -18], [33, -30, -51], [34, -62, -20], [35, -65, -57],
+        [36, -62, -54], [37, -58, -15], [38, -55, -47], [39, -61, -10], [40, -64, -56], [41, -35, -57],
+        [42, -63, -20], [43, -66, -58], [44, -67, -59], [45, -69, -61], [46, -69, -61], [47, -70, -62],
+        [48, -72, -64], [49, -10, -60], [50, -66, -20], [51, -65, -57], [52, -27, -59], [53, -70, -62],
+        [54, -71, -63], [55, -72, -64], [56, -73, -65], [57, -75, -26], [58, -70, -45], [59, -68, -60],
+        [60, -64, -56], [61, -60, -30], [62, -65, -57], [63, -67, -59], [64, -68, -60], [65, -69, -61],
+        [66, -70, -62], [67, -72, -64], [68, -75, -40], [69, -80, -72]
+         ]);
+ 
+         var options = {
+           title: 'Max DrawDown',
+           vAxis: {minValue: 0},
+           backgroundColor: '#A9A9A9'
+         };
+ 
+         var chart = new google.visualization.AreaChart(document.getElementById('area_div'));
+         chart.draw(data, options);
+       }
+     </script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
        google.charts.load('current', {'packages':['treemap']});
        google.charts.setOnLoadCallback(drawChart);
        function drawChart() {
@@ -142,7 +174,8 @@ function drawCurveTypes() {
            maxColor: '#0d0',
            headerHeight: 15,
            fontColor: 'black',
-           showScale: true
+           showScale: true,
+           backgroundColor: '#A9A9A9'
          });
  
        }
@@ -189,15 +222,17 @@ function drawCurveTypes() {
             
             <div class="col">
                 <div id="risco_retorno_div" style="width: 450px; height: 250px;"></div>
-                
+                <p></p>
+                <div id="area_div" style="width: 450px; height: 250px;"></div>
                 
                     </div>
 
                     <div class="col">
                       <div id="donutchart_div" style="width: 450px; height: 250px;"></div>
-                        
+                      <p></p>
+                        <div id="setor_div" style="width: 450px; height: 250px;"></div>
                             </div>
-                            <div id="setor_div" style="width: 1035px; height: 300px;"></div>
+                            
         </section>
          </main>
                 </div>
