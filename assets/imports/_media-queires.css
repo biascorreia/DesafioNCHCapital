@@ -1,0 +1,35 @@
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .row {
+        display: block;
+    }
+    .col {
+        width: 100%;
+    }
+    #chart_div {
+        width: 510px;
+        height: 150px;
+    }
+}
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    .row {
+        display: flex;
+        align-items: center;
+        
+    }
+    
+    .col {
+        width: 50%;
+        padding: 1rem;
+    }   
+
+    #chart_div {
+    width: 1020px; 
+    height: 300px;
+    }
+  }
