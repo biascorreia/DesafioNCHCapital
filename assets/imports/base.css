@@ -6,6 +6,7 @@
 body {
     font-family: 'Roboto' , sans-serif;
     font-weight: 100;
+    background-color: #fff;
 }
 
 
@@ -87,7 +88,7 @@ section.about:before {
     background: rgba(194, 194, 194, 0.5);
     position: absolute;
     right: -3rem;
-    top: -3rem;
+    top: -2rem;
     z-index: -1;
     transform: rotate(-6deg);
 }
@@ -99,7 +100,7 @@ section.about:after {
     background: #c2c2c2;
     position: absolute;
     left: -3rem;
-    top: -2rem;
+    top: -1rem;
     z-index: -1;
     transform: rotate(3deg);
 }
@@ -186,3 +187,21 @@ ul.social li a:hover {
 width: 1020px; 
 height: 300px;
 }
+
+#risco_retorno_div {
+width: 450px;
+height: 250px;
+    }
+#area_div {
+    width: 450px;
+    height: 250px;
+    }
+#donutchart_div {
+    width: 450px;
+    height: 250px;
+    }
+#setor_div {
+    width: 450px;
+    height: 250px;
+    }
+    

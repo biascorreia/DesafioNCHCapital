@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/imports/base.css">
+    <link rel="stylesheet" href="assets/imports/helpers.css">
+    <link rel="stylesheet" href="assets/imports/reset.css">
+    <link rel="stylesheet" href="assets/imports/mediaqueries.css">
+    <link rel="icon" href="assets/img/icon.png">
+    <script src="assets/js/script.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawCurveTypes);
 
+function drawCurveTypes() {
+      var data = new google.visualization.DataTable();
+      var dateObjectName = new Date();
+      console.log(dateObjectName)
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Soma de NCH Capital Maracanã FIA');
+      data.addColumn('number', 'IBX100');
+
+      data.addRows([
+      
+      [0, 0, 0],    [1, 10, 5],   [2, 23, 15],  [3, 17, 9],   [4, 18, 10],  [5, 9, 5],
+        [6, 11, 3],   [7, 27, 19],  [8, 33, 25],  [9, 40, 32],  [10, 32, 24], [11, 35, 27],
+        [12, 30, 22], [13, 40, 32], [14, 42, 34], [15, 47, 39], [16, 44, 36], [17, 48, 40],
+        [18, 52, 44], [19, 54, 46], [20, 42, 34], [21, 55, 47], [22, 56, 48], [23, 57, 49],
+        [24, 60, 52], [25, 50, 42], [26, 52, 44], [27, 51, 43], [28, 49, 41], [29, 53, 45],
+        [30, 55, 47], [31, 60, 52], [32, 61, 53], [33, 59, 51], [34, 62, 54], [35, 65, 57],
+        [36, 62, 54], [37, 58, 50], [38, 55, 47], [39, 61, 53], [40, 64, 56], [41, 65, 57],
+        [42, 63, 55], [43, 66, 58], [44, 67, 59], [45, 69, 61], [46, 69, 61], [47, 70, 62],
+        [48, 72, 64], [49, 68, 60], [50, 66, 58], [51, 65, 57], [52, 67, 59], [53, 70, 62],
+        [54, 71, 63], [55, 72, 64], [56, 73, 65], [57, 75, 67], [58, 70, 62], [59, 68, 60],
+        [60, 64, 56], [61, 60, 52], [62, 65, 57], [63, 67, 59], [64, 68, 60], [65, 69, 61],
+        [66, 70, 62], [67, 72, 64], [68, 75, 67], [69, 80, 72]
+      ]);
+
+
+      var options = {
+        title: 'Rentabilidade',
+        backgroundColor: '#A9A9A9',
+       
+        series: {
+          1: {curveType: 'function'}
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Setor', 'PL'],
+          ['Alimentos e Bebidas',     8],
+          ['Energia',      2],
+          ['Mercado Imobiliário',  11],
+          ['Outros', 1],
+          ['Seguros',    2],
+          ['Serviços do Consumidor', 4],
+          ['Utilitiles', 7],
+          ['Varejo', 10]
+        ]);
+
+        var options = {
+          title: '% PL por Setor - Short',
+          pieHole: 0.4,
+          backgroundColor: '#A9A9A9'
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+       google.charts.load('current', {'packages':['corechart']});
+       google.charts.setOnLoadCallback(drawChart);
+ 
+       function drawChart() {
+         var data = google.visualization.arrayToDataTable([
+           ['Risco Vol/Ano', 'Retorno desde o Início'],
+           [ 14,     139],
+           [ 26,      127],
+           [ 25,     150]
+           
+         ]);
+ 
+         var options = {
+           title: 'Risco x Retorno',
+           hAxis: {title: 'Risco Vol/Ano', minValue: 10 , maxValue: 30},
+           vAxis: {title: 'Retorno desde o Início', minValue: 120, maxValue: 150},
+           legend: 'none',
+           backgroundColor: '#A9A9A9'
+           
+          
+         };
+         
+ 
+         var chart = new google.visualization.ScatterChart(document.getElementById('risco_retorno_div'));
+ 
+         chart.draw(data, options);
+       }
+      
+     </script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+       google.charts.load('current', {'packages':['corechart']});
+       google.charts.setOnLoadCallback(drawChart);
+ 
+       function drawChart() {
+         var data = google.visualization.arrayToDataTable([
+           ['Year', 'DrawDown FIA', 'DrawDown Ibovespa'],
+           [0, 0, 0],    [1, -10, -5],   [2, -23, -15],  [3, -17, -9],   [4, -18, -10],  [5, -9, -5],
+        [6, -11, -3],   [7, -27, -19],  [8, -33, -25],  [9, -40, -40],  [10, -32, -24], [11, -35, -27],
+        [12, -30, -22], [13, -40, -32], [14, -42, -34], [15, -47, -39], [16, -44, -36], [17, -48, -40],
+        [18, -20, -44], [19, -54, -46], [20, -42, -10], [21, -55, -47], [22, -36, -15], [23, -57, -49],
+        [24, -60, -19], [25, -50, -42], [26, -52, -44], [27, -51, -43], [28, -49, -41], [29, -53, -45],
+        [30, -55, -47], [31, -40, -52], [32, -61, -18], [33, -30, -51], [34, -62, -20], [35, -65, -57],
+        [36, -62, -54], [37, -58, -15], [38, -55, -47], [39, -61, -10], [40, -64, -56], [41, -35, -57],
+        [42, -63, -20], [43, -66, -58], [44, -67, -59], [45, -69, -61], [46, -69, -61], [47, -70, -62],
+        [48, -72, -64], [49, -10, -60], [50, -66, -20], [51, -65, -57], [52, -27, -59], [53, -70, -62],
+        [54, -71, -63], [55, -72, -64], [56, -73, -65], [57, -75, -26], [58, -70, -45], [59, -68, -60],
+        [60, -64, -56], [61, -60, -30], [62, -65, -57], [63, -67, -59], [64, -68, -60], [65, -69, -61],
+        [66, -70, -62], [67, -72, -64], [68, -75, -40], [69, -80, -72]
+         ]);
+ 
+         var options = {
+           title: 'Max DrawDown',
+           vAxis: {minValue: 0},
+           backgroundColor: '#A9A9A9'
+         };
+ 
+         var chart = new google.visualization.AreaChart(document.getElementById('area_div'));
+         chart.draw(data, options);
+       }
+     </script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     <script type="text/javascript">
+       google.charts.load('current', {'packages':['treemap']});
+       google.charts.setOnLoadCallback(drawChart);
+       function drawChart() {
+         var data = google.visualization.arrayToDataTable([
+          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Nº de Ações por Setor',    null,                 0, 0],
+          ['Bens de Consumo',     'Nº de Ações por Setor',               16,                              4],
+          ['Finanças',     'Nº de Ações por Setor',               10,                              -12],
+          ['Mercado Imobiliário',     'Nº de Ações por Setor',               20,                              63],
+          ['Outros',      'Nº de Ações por Setor',               4,                               34],
+          ['Seguros',    'Nº de Ações por Setor',               12,                              24],
+          ['Alimentos, bebidas e fumo',      'Nº de Ações por Setor',               18,                              13],
+          ['Serviço do Consumidor',  'Nº de Ações por Setor',               11,                              -52],
+          ['Utilitiles',     'Nº de Ações por Setor',             25,                              0],
+          ['Materiais', 'Nº de Ações por Setor',             40,                              43],
+          ['Varejo não discricionário',     'Nº de Ações por Setor',             12,                              2],
+          ['Transporte',     'Nº de Ações por Setor',             10,                              12],
+          ['Serviço e Software',     'Nº de Ações por Setor',             8,                               10]
+        
+         ]);
+ 
+         tree = new google.visualization.TreeMap(document.getElementById('setor_div'));
+ 
+         tree.draw(data, {
+           minColor: '#f00',
+           midColor: '#ddd',
+           maxColor: '#0d0',
+           headerHeight: 15,
+           fontColor: 'black',
+           showScale: true,
+           backgroundColor: '#A9A9A9'
+         });
+ 
+       }
+     </script>
+     
+
+    <title> NCH Capital </title>
+</head>
+<body >
+</body>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
+</html>

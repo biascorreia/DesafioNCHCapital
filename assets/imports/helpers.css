@@ -3,7 +3,6 @@
     margin: auto;
     
 }
-
 .row {
     display: flex;
     align-items: center;
@@ -51,4 +50,3 @@
     border-radius: 100rem;
     background: #000;
 }
-
